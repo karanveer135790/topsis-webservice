@@ -8,7 +8,10 @@ from email.message import EmailMessage
 
 # ✅ Import TOPSIS function from your deployed package
 # Make sure your package has a function named `topsis(input_file, weights, impacts, output_file)`
-from Topsis_Karanveer_102303670.topsis import topsis
+
+
+from libname.topsis import topsis
+
 
 app = Flask(__name__)
 
