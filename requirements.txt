@@ -1,0 +1,5 @@
+flask
+pandas
+numpy
+werkzeug
+Topsis-Karanveer-102303670
