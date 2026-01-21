@@ -9,6 +9,7 @@
         input { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; }
         button { padding: 10px 20px; background: orange; border: none; cursor: pointer; font-weight: bold; }
         button:hover { background: darkorange; }
+        .msg { margin-top: 15px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -16,7 +17,8 @@
     <div class="box">
         <h2>TOPSIS Web Service</h2>
 
-        <form action="/submit" method="POST" enctype="multipart/form-data">
+        <!-- ✅ FIXED: submit to "/" because app.py route is @app.route("/", methods=["GET","POST"]) -->
+        <form action="/" method="POST" enctype="multipart/form-data">
 
             <label>File Name</label>
             <input type="file" name="file" required>
@@ -33,6 +35,12 @@
             <button type="submit">Submit</button>
 
         </form>
+
+        <!-- ✅ Show output message from Flask -->
+        {% if message %}
+            <p class="msg">{{ message }}</p>
+        {% endif %}
+
     </div>
 
 </body>
