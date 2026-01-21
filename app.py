@@ -52,7 +52,7 @@ def send_email(receiver_email, filepath):
     )
 
     # ✅ Gmail SMTP SSL
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as server:
         server.login(sender_email, sender_pass)
         server.send_message(msg)
 
